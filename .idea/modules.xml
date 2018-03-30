@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DashBoard.iml" filepath="$PROJECT_DIR$/DashBoard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AICTE_DashBoard_Android.iml" filepath="$PROJECT_DIR$/AICTE_DashBoard_Android.iml" />
+      <module fileurl="file://C:\Users\hp\Desktop\SIH\AICTE_DashBoard_Android\DashBoard.iml" filepath="C:\Users\hp\Desktop\SIH\AICTE_DashBoard_Android\DashBoard.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
