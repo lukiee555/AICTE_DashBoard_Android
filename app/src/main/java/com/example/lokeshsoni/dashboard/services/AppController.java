@@ -1,4 +1,4 @@
-package com.example.lokeshsoni.dashboard;
+package com.example.lokeshsoni.dashboard.services;
 
 /**
  * Created by lokeshsoni on 30/03/18.

@@ -1,4 +1,4 @@
-package com.example.lokeshsoni.dashboard.adapterClass;
+package com.example.lokeshsoni.dashboard.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.lokeshsoni.dashboard.InitiativeDescriptionClass;
+import com.example.lokeshsoni.dashboard.activities.InitiativeDetailsActivity;
 import com.example.lokeshsoni.dashboard.R;
 import com.example.lokeshsoni.dashboard.modal.InitiativesCardView;
 
@@ -21,7 +21,7 @@ import java.util.List;
  * Created by hp on 27-03-2018.
  */
 
-public class InitiativesCardViewAdapterClass extends RecyclerView.Adapter<InitiativesCardViewAdapterClass.MyViewHolder> {
+public class InitiativesAdapter extends RecyclerView.Adapter<InitiativesAdapter.MyViewHolder> {
     private Context context;
     private List<InitiativesCardView> initiativesCardViewsList;
     @Override
@@ -33,13 +33,24 @@ public class InitiativesCardViewAdapterClass extends RecyclerView.Adapter<Initia
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
-        InitiativesCardView initiativesCardView = initiativesCardViewsList.get(position);
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
+        final InitiativesCardView initiativesCardView = initiativesCardViewsList.get(position);
         holder.initCardViewName.setText(initiativesCardView.getInit_card_view_name());
 
+        holder.initCradViewLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, InitiativeDetailsActivity.class);
+                i.putExtra("id",initiativesCardViewsList.get(position).getId());
+                i.putExtra("title",initiativesCardViewsList.get(position).getInit_card_view_name());
+                i.putExtra("desc",initiativesCardViewsList.get(position).getDesc());
+                context.startActivity(i);
+            }
+        });
         Glide.with(context)
                 .load(initiativesCardView.getInit_card_view_image())
                         .into(holder.initCardViewImage);
+
 
 
     }
@@ -53,22 +64,22 @@ public class InitiativesCardViewAdapterClass extends RecyclerView.Adapter<Initia
         private TextView initCardViewName;
         private ImageView initCardViewImage;
         private LinearLayout initCradViewLinearLayout;
+
+
+
         public MyViewHolder(View itemView) {
             super(itemView);
             context = itemView.getContext();
             initCardViewName = itemView.findViewById(R.id.init_card_view_name);
             initCardViewImage = itemView.findViewById(R.id.init_card_view_image);
             initCradViewLinearLayout = itemView.findViewById(R.id.init_card_view_linear_layout);
-            initCradViewLinearLayout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent i = new Intent(context, InitiativeDescriptionClass.class);
-                    context.startActivity(i);
-                }
-            });
+
+
         }
+
+
     }
-    public InitiativesCardViewAdapterClass(Context context, List<InitiativesCardView> initiativesCardViewsList){
+    public InitiativesAdapter(Context context, List<InitiativesCardView> initiativesCardViewsList){
         this.context = context;
         this.initiativesCardViewsList = initiativesCardViewsList;
     }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cvLayout"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/ivBeneficiary"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.8"
+            android:src="@drawable/aicte"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="0.2"
+            android:layout_gravity="center_vertical">
+            <TextView
+                android:id="@+id/beneficiaryName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/robert_nigeria"
+                android:layout_marginLeft="10dp"
+                android:textColor="#ffffff"/>
+            <RatingBar
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:isIndicator="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                style="?android:attr/ratingBarStyleSmall"
+                android:id="@+id/ratingBar"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

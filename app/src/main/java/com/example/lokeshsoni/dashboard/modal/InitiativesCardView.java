@@ -7,14 +7,33 @@ package com.example.lokeshsoni.dashboard.modal;
 public class InitiativesCardView {
     private String init_card_view_name;
     private int init_card_view_image;
-
+    private  String desc;
+    private String id;
 
 public  InitiativesCardView(){}
 
-public InitiativesCardView(String init_card_view_name, int init_card_view_image){
+public InitiativesCardView(String id,String init_card_view_name, int init_card_view_image,String desc ){
     this.init_card_view_name = init_card_view_name;
     this.init_card_view_image = init_card_view_image;
+    this.desc = desc;
+    this.id = id;
 }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
 
     public String getInit_card_view_name() {
         return init_card_view_name;
