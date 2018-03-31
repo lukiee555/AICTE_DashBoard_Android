@@ -43,15 +43,17 @@ public class InitiativeDetailsActivity extends AppCompatActivity {
     List<Reviews> reviewsList = new ArrayList<>();
     Button uploadExcelButton;
     Button viewRatings ;
+    Button viewBeneficiaries, viewInstitutes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initiative_details);
-        textViewTitle = (TextView)findViewById(R.id.textViewTitle);
-        textViewDesc = (TextView)findViewById(R.id.textViewDesc);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        uploadExcelButton = (Button)findViewById(R.id.uploadExcelButton);
-
+        textViewTitle = findViewById(R.id.textViewTitle);
+        textViewDesc = findViewById(R.id.textViewDesc);
+        recyclerView = findViewById(R.id.recyclerView);
+        uploadExcelButton = findViewById(R.id.uploadExcelButton);
+        viewBeneficiaries = findViewById(R.id.viewBeneficiaries);
+        viewInstitutes = findViewById(R.id.viewInstitutes);
         viewRatings = findViewById(R.id.viewRating);
         Bundle bundle = getIntent().getExtras();
         textViewDesc.setText(bundle.getString("desc"));
@@ -85,6 +87,22 @@ public class InitiativeDetailsActivity extends AppCompatActivity {
             }
         });
 
+        viewBeneficiaries.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),BeneficiaryListActivity.class);
+                intent.putExtra("initiativeId",initiativeId);
+                startActivity(intent);
+            }
+        });
+        viewInstitutes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),InstituteListActivity.class);
+                intent.putExtra("initiativeId",initiativeId);
+                startActivity(intent);
+            }
+        });
     }
     public class UploadExcel extends AsyncTask{
         String response;
@@ -142,7 +160,7 @@ public class InitiativeDetailsActivity extends AppCompatActivity {
             dialog = new ProgressDialog(InitiativeDetailsActivity.this);
             dialog.setMessage("Doing something, please wait.");
             dialog.show();
-             client = new RestClient("https://aicte.herokuapp.com/initiative/"+initiativeId+"/ratings",getApplicationContext());
+            client = new RestClient("https://aicte.herokuapp.com/initiative/"+initiativeId+"/ratings",getApplicationContext());
 
             super.onPreExecute();
         }

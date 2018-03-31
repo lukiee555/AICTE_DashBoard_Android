@@ -3,8 +3,8 @@
     package="com.example.lokeshsoni.dashboard">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,18 +16,25 @@
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.AddInitiativesActivity" />
         <activity android:name=".activities.AddParametersActivity" />
-        <activity android:name=".activities.LoginActivity">
+        <activity
+            android:name=".activities.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".activities.InitiativeDetailsActivity" />
+        <activity android:name=".activities.AllRatingActivity" />
+        <activity android:name=".activities.InstituteListActivity" />
+        <activity android:name=".activities.BeneficiaryListActivity" />
+        <activity android:name=".InititativeChartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.InitiativeDetailsActivity"></activity>
-        <activity android:name=".activities.AllRatingActivity"></activity>
     </application>
 
 </manifest>

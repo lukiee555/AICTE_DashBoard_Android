@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
+    android:paddingTop="16dp"
     xmlns:scatter="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.lokeshsoni.dashboard.activities.InitiativeDetailsActivity">
 
@@ -19,7 +20,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:src="@drawable/cover"
+        android:src="@drawable/smart"
         android:scaleType="center"
         android:layout_height="150dp" />
 
@@ -69,7 +70,15 @@
          </android.support.v7.widget.RecyclerView>
        </LinearLayout>
    </android.support.v7.widget.CardView>
+            <LinearLayout
+                android:weightSum="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
             <Button
+                android:layout_weight=".5"
                 android:layout_gravity="center"
                 android:id="@+id/viewRating"
                 android:layout_width="match_parent"
@@ -79,6 +88,7 @@
                 android:theme="@style/ButtonPrimary"
                  />
             <Button
+                android:layout_weight=".5"
                 android:layout_gravity="center"
                 android:id="@+id/uploadExcelButton"
                 android:layout_width="match_parent"
@@ -87,6 +97,34 @@
                 android:text="BATCH UPLOAD DATA"
                 android:theme="@style/ButtonPrimary"
                 />
+            </LinearLayout>
+            <LinearLayout
+                android:weightSum="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_weight=".5"
+                    android:layout_gravity="center"
+                    android:id="@+id/viewBeneficiaries"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="View Beneficiaries"
+                    android:theme="@style/ButtonPrimary"
+                    />
+                <Button
+                    android:layout_weight=".5"
+                    android:layout_gravity="center"
+                    android:id="@+id/viewInstitutes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="View Institutes"
+                    android:theme="@style/ButtonPrimary"
+                    />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -12,6 +12,7 @@ public class Beneficiary implements Serializable {
             private  String name;
             private String email;
             private String initiative;
+            private String institute;
 
     public Beneficiary() {
 
@@ -23,6 +24,20 @@ public class Beneficiary implements Serializable {
         this.name = name;
         this.email = email;
         this.initiative = initiative;
+    }
+    public Beneficiary(String id, String name, String email, String initiative,String institute) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.initiative = initiative;
+        this.institute = institute;
+    }
+    public String getInstitute() {
+        return institute;
+    }
+
+    public void setInstitute(String institute) {
+        this.institute = institute;
     }
 
     public String getId() {

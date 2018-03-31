@@ -52,5 +52,6 @@ dependencies {
     compile 'com.github.shem8:material-login:2.1.1'
 
     implementation 'com.github.IntruderShanky:scatter-piechart:1.0.0'
+    compile 'me.ithebk:barchart:0.9'
 
 }

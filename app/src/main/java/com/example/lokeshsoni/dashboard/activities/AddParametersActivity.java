@@ -93,7 +93,7 @@ public class AddParametersActivity extends AppCompatActivity {
                         Log.d("Response", response);
                         try {
                             JSONObject jsonObject = new JSONObject(response);
-                            parameters.append(jsonObject.getString("name") + "\n");
+                            parameters.append(jsonObject.getString("name").toUpperCase() + "\n");
 
                         } catch (JSONException e) {
                             e.printStackTrace();
